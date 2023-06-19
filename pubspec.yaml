@@ -1,0 +1,138 @@
+name: shrine_example_app
+description: The Shrine Sample App using the MVC design pattern.
+
+version: 2.3.0
+
+environment:
+#  sdk: ">=2.16.2 <3.0.0"
+#  sdk: ">=2.18.0 <3.0.0"
+  sdk: '>=3.0.3 <4.0.0'
+
+dependencies:
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  # https://pub.dev/packages/cupertino_icons
+  cupertino_icons: ^1.0.0
+
+#  # https://github.com/aloisdeniel/flutter_device_preview
+#  device_preview:
+#    path: ../../apps/flutter_device_preview/device_preview  # Eventually move to Lib, right?
+
+  flutter:
+    sdk: flutter
+
+  flutter_localizations:
+    sdk: flutter
+
+  # https://pub.dev/packages/fluttery_framework
+  fluttery_framework: #^1.0.0
+      path: ../../packages/fluttery_framework
+
+# https://pub.dev/packages/path_provider
+  path_provider: ^2.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^2.0.0
+
+  # To create an MSIX distribution for the Microsoft Store
+  msix: ^3.0.0
+
+msix_config:
+  display_name: Shrine Flutter Demo Only
+  publisher_display_name: Andrious Solutions Ltd.
+  identity_name: AndriousSolutionsLtd.ShrineFlutterDemoOnly
+#  capabilities: 'internetClient,location,microphone,webcam'
+#  certificate_path: C:/<PathToCertificate>/<MyCertificate.pfx>
+#  certificate_password: 1234 (require if using .pfx certificate)
+#  certificate_subject: CN=MyName
+  logo_path: C:\Programs\Tools\Projects\Flutter\examples\shrine_mvc\windows_logo.png
+  start_menu_icon_path: C:\Programs\Tools\Projects\Flutter\examples\shrine_mvc\windows_logo.png
+  tile_icon_path: C:\Programs\Tools\Projects\Flutter\examples\shrine_mvc\windows_logo.png
+  icons_background_color: transparent
+  languages: en
+  architecture: x64
+  publisher: CN=D21AD24D-2385-4919-912B-45D7C00CDFDE
+  store: true
+  install_certificate: false
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+  assets:
+    - assets/i10n/i10n.csv
+    - assets/diamond.png
+    - assets/slanted_menu.png
+    - assets/0-0.jpg
+    - assets/1-0.jpg
+    - assets/2-0.jpg
+    - assets/3-0.jpg
+    - assets/4-0.jpg
+    - assets/5-0.jpg
+    - assets/6-0.jpg
+    - assets/7-0.jpg
+    - assets/8-0.jpg
+    - assets/9-0.jpg
+    - assets/10-0.jpg
+    - assets/11-0.jpg
+    - assets/12-0.jpg
+    - assets/13-0.jpg
+    - assets/14-0.jpg
+    - assets/15-0.jpg
+    - assets/16-0.jpg
+    - assets/17-0.jpg
+    - assets/18-0.jpg
+    - assets/19-0.jpg
+    - assets/20-0.jpg
+    - assets/21-0.jpg
+    - assets/22-0.jpg
+    - assets/23-0.jpg
+    - assets/24-0.jpg
+    - assets/25-0.jpg
+    - assets/26-0.jpg
+    - assets/27-0.jpg
+    - assets/28-0.jpg
+    - assets/29-0.jpg
+    - assets/30-0.jpg
+    - assets/31-0.jpg
+    - assets/32-0.jpg
+    - assets/33-0.jpg
+    - assets/34-0.jpg
+    - assets/35-0.jpg
+    - assets/36-0.jpg
+    - assets/37-0.jpg
+  
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
