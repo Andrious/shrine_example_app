@@ -1,16 +1,26 @@
-import 'package:shrine_example_app/src/controller.dart' as c;
+//
+import 'package:shrine_example_app/src/controller.dart';
 
 import 'package:shrine_example_app/src/model.dart';
 
 import 'package:shrine_example_app/src/view.dart';
 
 ///
-class ShrineApp extends AppState {
+class MyApp extends AppStatefulWidget {
   ///
-  ShrineApp()
+  // Global key to 'keep' the State object and just move around the Widget tree
+  MyApp({Key? key}) : super(key: key ?? GlobalKey(debugLabel: 'shrine'));
+  @override
+  AppState createAppState() => _ShrineAppState();
+}
+
+///
+class _ShrineAppState extends AppState {
+  ///
+  _ShrineAppState()
       : super(
-          controller: c.ShrineApp(),
-          home: HomePage(key: GlobalKey()),
+          controller: ShrineApp(),
+          home: HomePage(key: GlobalKey(debugLabel: 'HomePage')),
           object: AppStateModel(),
           onGenerateTitle: (context) => 'Shrine'.tr,
           initialRoute: '/login',
