@@ -208,10 +208,11 @@ packages:
   fluttery_framework:
     dependency: "direct main"
     description:
-      path: "../../packages/fluttery_framework"
-      relative: true
-    source: path
-    version: "4.0.0"
+      name: fluttery_framework
+      sha256: cdb27ee9599d82d49d0a6c4c926f87d5dc39af687cdbbec62b2578651a15b9e2
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.0.0+7"
   get_it:
     dependency: transitive
     description:

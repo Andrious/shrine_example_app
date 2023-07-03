@@ -424,6 +424,10 @@ class _ExpandingBottomSheetState extends StateX<ExpandingBottomSheet>
       ),
     );
   }
+
+  // A Cupertino interface is not yet implemented.
+  @override
+  Widget buildiOS(BuildContext context) => buildAndroid(context);
 }
 
 ///

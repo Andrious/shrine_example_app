@@ -46,6 +46,10 @@ class _ProductPageState extends StateX<ProductPage> {
     model.loadProducts();
     return AsymmetricView(products: model.getProducts());
   }
+
+  // A Cupertino interface is not yet implemented.
+  @override
+  Widget buildiOS(BuildContext context) => buildAndroid(context);
 }
 
 /// The InheritedWidget assigned 'dependent' child widgets.
