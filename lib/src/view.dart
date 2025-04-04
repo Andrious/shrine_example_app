@@ -23,25 +23,19 @@
 
 export 'package:fluttery_framework/view.dart';
 
-export 'package:shrine_example_app/src/app/supplemental/asymmetric_view.dart';
+export 'package:ui_widgets_utils/ui_widgets_utils.dart';
 
-export 'package:shrine_example_app/src/app/supplemental/cut_corners_border.dart';
-
+export '/src/app/supplemental/asymmetric_view.dart';
+export '/src/app/supplemental/cut_corners_border.dart';
+export '/src/app/view/app.dart';
+export '/src/app/view/colors.dart';
+export '/src/app/view/login.dart';
 // export 'package:device_preview/device_preview.dart'
 //     hide basicLocaleListResolution;
 
-export 'package:shrine_example_app/src/app/view/app.dart';
-
-export 'package:shrine_example_app/src/app/view/colors.dart';
-
-export 'package:shrine_example_app/src/app/view/login.dart';
-
-export 'package:shrine_example_app/src/home/view/backdrop.dart';
-
-export 'package:shrine_example_app/src/home/view/category_menu_page.dart';
-
-export 'package:shrine_example_app/src/home/view/expanding_bottom_sheet.dart';
-
-export 'package:shrine_example_app/src/home/view/home.dart';
-
-export 'package:shrine_example_app/src/home/view/products.dart';
+export '/src/app/view/menu/app_menu.dart';
+export '/src/home/view/backdrop.dart';
+export '/src/home/view/category_menu_page.dart';
+export '/src/home/view/expanding_bottom_sheet.dart';
+export '/src/home/view/home.dart';
+export '/src/home/view/products.dart';

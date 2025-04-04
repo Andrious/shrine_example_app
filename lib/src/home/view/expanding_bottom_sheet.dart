@@ -121,7 +121,7 @@ double _getPeakPoint({required double begin, required double end}) {
 
 class _ExpandingBottomSheetState extends StateX<ExpandingBottomSheet>
     with TickerProviderStateMixin {
-  _ExpandingBottomSheetState() : super(controller: AppStateModel());
+  _ExpandingBottomSheetState() : super(controller: AppStateModel(), useInherited: true);
 
   final GlobalKey _expandingBottomSheetKey =
       GlobalKey(debugLabel: 'Expanding bottom sheet');

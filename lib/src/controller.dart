@@ -23,4 +23,6 @@
 
 export 'package:fluttery_framework/controller.dart';
 
-export 'package:shrine_example_app/src/app/controller/app.dart';
+export '/src/app/controller/app.dart';
+
+export '/src/app/controller/theme_controller.dart';

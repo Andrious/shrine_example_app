@@ -1,20 +1,17 @@
 name: shrine_example_app
 description: The Shrine Sample App using the Fluttery Framework.
 
-version: 2.3.0+2
+version: 2.4.0
 
 environment:
-#  sdk: ">=2.16.2 <3.0.0"
-#  sdk: ">=2.18.0 <3.0.0"
-#  sdk: '>=3.0.3 <4.0.0'
-  sdk: ">=2.18.0 <4.0.0"
+  sdk: '>=3.0.3 <4.0.0'
 
 dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   # https://pub.dev/packages/cupertino_icons
-  cupertino_icons: ^1.0.0
+#  cupertino_icons: ^1.0.0
 
 #  # https://github.com/aloisdeniel/flutter_device_preview
 #  device_preview:
@@ -27,43 +24,50 @@ dependencies:
     sdk: flutter
 
   # https://pub.dev/packages/fluttery_framework
-  fluttery_framework: ^4.0.0
- #     path: ../../packages/fluttery_framework
+  fluttery_framework: #^5.0.0
+      path: ../../packages/fluttery_framework
 
 # https://pub.dev/packages/path_provider
   path_provider: ^2.0.0
 
+# https://pub.dev/packages/ui_widgets_utils
+  ui_widgets_utils: ^1.2.0
+  #    path: ../../ui_widgets_utils/
+  #    git:
+  #      url: https://github.com/AndriousSolutions/ui_widgets_utils.git
+
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^2.0.0
+  flutter_lints: ^5.0.0
 
-  # To create an MSIX distribution for the Microsoft Store
-  msix: ^3.0.0
+  flutter_test:
+    sdk: flutter
 
-msix_config:
-  display_name: Shrine Flutter Demo Only
-  publisher_display_name: Andrious Solutions Ltd.
-  identity_name: AndriousSolutionsLtd.ShrineFlutterDemoOnly
-#  capabilities: 'internetClient,location,microphone,webcam'
-#  certificate_path: C:/<PathToCertificate>/<MyCertificate.pfx>
-#  certificate_password: 1234 (require if using .pfx certificate)
-#  certificate_subject: CN=MyName
-  logo_path: C:\Programs\Tools\Projects\Flutter\examples\shrine_mvc\windows_logo.png
-  start_menu_icon_path: C:\Programs\Tools\Projects\Flutter\examples\shrine_mvc\windows_logo.png
-  tile_icon_path: C:\Programs\Tools\Projects\Flutter\examples\shrine_mvc\windows_logo.png
-  icons_background_color: transparent
-  languages: en
-  architecture: x64
-  publisher: CN=D21AD24D-2385-4919-912B-45D7C00CDFDE
-  store: true
-  install_certificate: false
+#  # To create an MSIX distribution for the Microsoft Store
+#  msix: ^3.0.0
+
+#msix_config:
+#  display_name: Shrine Flutter Demo Only
+#  publisher_display_name: Andrious Solutions Ltd.
+#  identity_name: AndriousSolutionsLtd.ShrineFlutterDemoOnly
+##  capabilities: 'internetClient,location,microphone,webcam'
+##  certificate_path: C:/<PathToCertificate>/<MyCertificate.pfx>
+##  certificate_password: 1234 (require if using .pfx certificate)
+##  certificate_subject: CN=MyName
+#  logo_path: C:\Programs\Tools\Projects\Flutter\examples\shrine_mvc\windows_logo.png
+#  start_menu_icon_path: C:\Programs\Tools\Projects\Flutter\examples\shrine_mvc\windows_logo.png
+#  tile_icon_path: C:\Programs\Tools\Projects\Flutter\examples\shrine_mvc\windows_logo.png
+#  icons_background_color: transparent
+#  languages: en
+#  architecture: x64
+#  publisher: CN=D21AD24D-2385-4919-912B-45D7C00CDFDE
+#  store: true
+#  install_certificate: false
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

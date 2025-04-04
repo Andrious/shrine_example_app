@@ -12,12 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import 'package:shrine_example_app/src/model.dart' show Product;
-
-import 'package:shrine_example_app/src/view.dart';
-
 import 'package:shrine_example_app/src/app/supplemental/product_card.dart'
     show ProductCard;
+import 'package:shrine_example_app/src/model.dart' show Product;
+import 'package:shrine_example_app/src/view.dart';
 
 ///
 class TwoProductCardColumn extends StatelessWidget {

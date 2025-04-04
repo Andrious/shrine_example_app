@@ -18,9 +18,9 @@ import 'package:flutter/services.dart';
 
 import 'package:prefs/prefs.dart' show Prefs;
 
-import 'package:shrine_example_app/src/model.dart' show AppStateModel;
+import '/src/model.dart' show AppStateModel;
 
-import 'package:shrine_example_app/src/view.dart' show AppMenu, L10n;
+import '/src/view.dart' show AppMenu, L10n;
 
 const Cubic _kAccelerateCurve = Cubic(0.548, 0, 0.757, 0.464);
 const Cubic _kDecelerateCurve = Cubic(0.23, 0.94, 0.41, 1);
@@ -313,9 +313,7 @@ class _BackdropState extends State<Backdrop>
         frontTitle: widget.frontTitle,
         backTitle: widget.backTitle,
       ),
-      actions: <Widget>[
-        _PopMenu().popupMenuButton,
-      ],
+      actions: [AppMenu()],
     );
     return Scaffold(
       appBar: appBar,
@@ -326,27 +324,27 @@ class _BackdropState extends State<Backdrop>
   }
 }
 
-class _PopMenu extends AppMenu<Locale> {
-  _PopMenu()
-      : super(
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-          position: PopupMenuPosition.under,
-        );
-  @override
-  List<PopupMenuItem<Locale>> get menuItems => [
-        PopupMenuItem<Locale>(
-            value: const Locale('en', 'US'), child: L10n.t('English')),
-        PopupMenuItem<Locale>(
-            value: const Locale('fr', 'FR'), child: L10n.t('French')),
-        PopupMenuItem<Locale>(
-            value: const Locale('es', 'AR'), child: L10n.t('Spanish')),
-      ];
-
-  @override
-  void selected(Locale value) {
-    L10n.locale = value;
-    Prefs.setString('locale', value.toString());
-    AppStateModel().refresh();
-  }
-}
+// class _PopMenu extends AppMenu<Locale> {
+//   _PopMenu()
+//       : super(
+//           shape:
+//               RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+//           position: PopupMenuPosition.under,
+//         );
+//   @override
+//   List<PopupMenuItem<Locale>> get menuItems => [
+//         PopupMenuItem<Locale>(
+//             value: const Locale('en', 'US'), child: L10n.t('English')),
+//         PopupMenuItem<Locale>(
+//             value: const Locale('fr', 'FR'), child: L10n.t('French')),
+//         PopupMenuItem<Locale>(
+//             value: const Locale('es', 'AR'), child: L10n.t('Spanish')),
+//       ];
+//
+//   @override
+//   void selected(Locale value) {
+//     L10n.locale = value;
+//     Prefs.setString('locale', value.toString());
+//     AppStateModel().refresh();
+//   }
+// }

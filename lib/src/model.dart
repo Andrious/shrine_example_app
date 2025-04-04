@@ -21,12 +21,8 @@
 ///
 ///
 
-export 'package:shrine_example_app/src/home/model/app_state_model.dart';
-
-export 'package:shrine_example_app/src/home/model/product.dart';
-
-export 'package:shrine_example_app/src/home/model/shopping_cart.dart';
-
-export 'package:shrine_example_app/src/home/model/products_repository.dart';
-
 export 'package:shrine_example_app/src/home/model/L10n_words.dart';
+export 'package:shrine_example_app/src/home/model/app_state_model.dart';
+export 'package:shrine_example_app/src/home/model/product.dart';
+export 'package:shrine_example_app/src/home/model/products_repository.dart';
+export 'package:shrine_example_app/src/home/model/shopping_cart.dart';

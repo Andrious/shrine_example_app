@@ -11,21 +11,29 @@ class MyApp extends AppStatefulWidget {
   // Global key to 'keep' the State object and just move around the Widget tree
   MyApp({Key? key}) : super(key: key ?? GlobalKey(debugLabel: 'shrine'));
   @override
-  AppState createAppState() => _ShrineAppState();
+  AppStateX createAppState() => _ShrineAppState();
 }
 
 ///
-class _ShrineAppState extends AppState {
+class _ShrineAppState extends AppStateX {
   ///
   _ShrineAppState()
       : super(
           controller: ShrineApp(),
+          errorHandler: AppErrorHandler.errorHandler,
+          errorScreen: AppErrorHandler.displayErrorWidget,
+          inUnknownRoute: AppErrorHandler.onUnknownRoute,
           home: HomePage(key: GlobalKey(debugLabel: 'HomePage')),
           object: AppStateModel(),
           onGenerateTitle: (context) => 'Shrine'.tr,
           initialRoute: '/login',
-          onGenerateRoute: _getRoute,
+          inGenerateRoute: _getRoute,
+          allowChangeTheme: true,
+          allowChangeLocale: true,
           debugShowCheckedModeBanner: false,
+//          debugPaintSizeEnabled: true,
+//          debugPaintPointersEnabled: true,
+//          debugPaintLayerBordersEnabled: true,
           localeResolutionCallback: L10n.localeResolutionCallback,
           supportedLocales: L10n.supportedLocales,
           localizationsDelegates: [
@@ -48,8 +56,8 @@ class _ShrineAppState extends AppState {
   // Copy the platform from the main theme in order to support platform
   // toggling from the Gallery options menu.
   @override
-  ThemeData onTheme() =>
-      _kShrineTheme.copyWith(platform: Theme.of(App.context!).platform);
+  ThemeData? onTheme([BuildContext? context]) =>
+      _kShrineTheme.copyWith(platform: Theme.of(context!).platform);
 
   @override
   Locale onLocale() {

@@ -13,14 +13,11 @@
 // limitations under the License.
 
 import 'package:flutter/material.dart';
-
 import 'package:intl/intl.dart' show NumberFormat;
-
+import 'package:shrine_example_app/src/model.dart' show AppStateModel, Product;
 // import 'package:scoped_model/scoped_model.dart';
 
 import 'package:shrine_example_app/src/view.dart' show SetState;
-
-import 'package:shrine_example_app/src/model.dart' show AppStateModel, Product;
 
 ///
 class ProductCard extends StatelessWidget {
@@ -83,7 +80,7 @@ class ProductCard extends StatelessWidget {
                           children: <Widget>[
                             Text(
                               product.name,
-                              style: theme.textTheme.button,
+                              style: theme.textTheme.labelLarge,
                               softWrap: false,
                               overflow: TextOverflow.ellipsis,
                               maxLines: 1,
@@ -91,7 +88,7 @@ class ProductCard extends StatelessWidget {
                             const SizedBox(height: 4),
                             Text(
                               formatter.format(product.price),
-                              style: theme.textTheme.caption,
+                              style: theme.textTheme.bodySmall,
                             ),
                           ],
                         ),

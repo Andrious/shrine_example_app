@@ -41,7 +41,7 @@ class _ProductPageState extends StateX<ProductPage> {
   _ProductPageState() : super(controller: AppStateModel());
   @override
   Widget buildAndroid(context) {
-    dependOnInheritedWidget(context);
+    App.dependOnInheritedWidget(context);
     final model = controller as AppStateModel;
     model.loadProducts();
     return AsymmetricView(products: model.getProducts());

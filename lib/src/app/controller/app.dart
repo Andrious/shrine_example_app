@@ -21,11 +21,119 @@
 ///
 ///
 
-import 'package:shrine_example_app/src/model.dart' show AppTranslations;
+import '/src/controller.dart' show AppStateXController, ThemeController;
 
-import 'package:shrine_example_app/src/controller.dart' show AppController;
-
-import 'package:shrine_example_app/src/view.dart';
+import '/src/view.dart'
+    show
+        App,
+        AppStateExtension,
+        BuildContext,
+        DialogBox,
+        L10n,
+        L10nTranslate,
+        Locale,
+        MsgBox,
+        SpinnerCupertino,
+        Text,
+        TextStyle,
+        ThemeData,
+        UniversalPlatform,
+        kIsWeb,
+        showAboutDialog;
 
 ///
-class ShrineApp extends AppController {}
+class ShrineApp extends AppStateXController {
+  ///
+  factory ShrineApp() => _this ??= ShrineApp._();
+  ShrineApp._() {
+    _themeCon = ThemeController();
+  }
+  static ShrineApp? _this;
+
+  // Theme Controller
+  ThemeController? _themeCon;
+
+  @override
+  Future<bool> initAsync() async {
+    _appTheme ??= App.themeData;
+    App.themeData = _themeCon?.setIfDarkMode();
+    return true;
+  }
+
+  // Original App Theme
+  ThemeData? _appTheme;
+
+  /// Toggle the App's Dark Mode
+  void darkMode() {
+    var darkMode = _themeCon?.isDarkMode;
+    if (darkMode != null) {
+      darkMode = !darkMode;
+      _themeCon?.isDarkMode = darkMode;
+      if (darkMode) {
+        App.themeData = ThemeData.dark();
+      } else {
+        App.themeData = _appTheme;
+      }
+      App.setState(() {});
+    }
+  }
+
+  ///
+  Future<void> changeLocale() async {
+    ///
+    final app = appState!;
+
+    if (!app.allowChangeLocale) {
+      await MsgBox(
+        context: app.lastContext!,
+        title: 'Current Language'.tr,
+        msg: 'Setting, allowChangeLocale, is set to false.',
+      ).show();
+      return;
+    }
+
+    final locale = app.locale!;
+
+    final locales = app.supportedLocales;
+
+    // record selected locale
+    Locale? appLocale;
+
+    final spinner = SpinnerCupertino<Locale>(
+      initValue: locale,
+      values: locales,
+      itemBuilder: (BuildContext context, int index) => Text(
+        locales[index].countryCode == null
+            ? locales[index].languageCode
+            : '${locales[index].languageCode}-${locales[index].countryCode}',
+        style: const TextStyle(fontSize: 20),
+      ),
+      onSelectedItemChanged: (int index) async {
+        appLocale = L10n.getLocale(index);
+      },
+      mouseUse: kIsWeb || UniversalPlatform.isWindows,
+    );
+
+    await DialogBox(
+      context: app.lastContext!,
+      title: 'Current Language'.tr,
+      body: [spinner],
+      press01: () {},
+      press02: () => App.changeLocale(appLocale),
+    ).show();
+  }
+
+  ///
+  void aboutApp() => showAboutDialog(
+        context: App.context!,
+        applicationName: App.appState?.title ?? '',
+        applicationVersion: 'version: ${App.version} build: ${App.buildNumber}',
+      );
+
+  @override
+  void dispose() {
+    _themeCon = null;
+    _appTheme = null;
+    super.dispose();
+  }
+}

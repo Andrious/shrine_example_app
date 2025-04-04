@@ -55,7 +55,7 @@ class _LoginPageState extends State<LoginPage> {
                   const SizedBox(height: 16),
                   Text(
                     'SHRINE'.tr,
-                    style: Theme.of(context).textTheme.headline2,
+                    style: Theme.of(context).textTheme.displayMedium,
                   ),
                 ],
               ),
@@ -84,7 +84,7 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(height: 2),
               Wrap(
                 children: <Widget>[
-                  ButtonBar(
+                  OverflowBar(
                     children: <Widget>[
                       ElevatedButton(
                         child: Text('Cancel'.tr),

@@ -1,4 +1,8 @@
 
+## 2.4.0
+ April 04, 2025
+- Updated Flutter and Fluttery Framework
+
 ## 2.3.0+2
  June 19, 2023
 - Updated Flutter and Fluttery Framework
